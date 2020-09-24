@@ -1,6 +1,8 @@
-Locust based TFE load-testing stack
+# Locust based TFE load-testing stack
 
-The tests exercise the TFE API's, 
+### The tests exercise the TFE API's for the purposes of load testing the system.
+
+### The tests should mirror typical user workloads, which can then be run at scale.
 
 # Start tests with a WebUI, you can start/stop/configure the runs through a UI
 ```
