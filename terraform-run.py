@@ -3,7 +3,7 @@ import json, random, base64, os
 
 import requests
 
-ORGANIZATION_NAME = "test-organization-mlopez-hashi"
+ORGANIZATION_NAME = os.getenv('ORGANIZATION_NAME')
 
 USER_TOKEN = os.getenv('USER_TOKEN')
 

@@ -7,6 +7,7 @@
 # Start tests with a WebUI, you can start/stop/configure the runs through a UI
 ```
 docker run -p 8089:8089 \
+    -e ORGANIZATION_NAME=MY_ORG_NAME \
     -e USER_TOKEN=MY_USER_TOKEN \
     -v $PWD:/mnt/locust locustio/locust \
     -f /mnt/locust/terraform-run.py \
@@ -17,6 +18,7 @@ docker run -p 8089:8089 \
 ## This is a
 ```
 docker run /
+    -e ORGANIZATION_NAME=MY_ORG_NAME \
     -e USER_TOKEN=MY_USER_TOKEN \
     -v $PWD:/mnt/locust locustio/locust /
     -f /mnt/locust/terraform-run.py /
