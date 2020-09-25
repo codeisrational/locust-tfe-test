@@ -23,7 +23,6 @@ class TerraformRun(TaskSet):
     # executes the entire api driven flow
     @task
     def do_api_workflow(self):
-
         # reference an archive with our terraform files, hard-coded here as example
         archive_name = "initial.tar.gz"
 
@@ -47,7 +46,6 @@ class TerraformRun(TaskSet):
 
         # get the workspace ID so we can use it to create a configuration-version
         workspace_id = workspace['data']['id']
-        print(workspace)
 
         # create configuration version
         # returns configuration-version with '.data.attributes.upload-url'
@@ -66,8 +64,8 @@ class TerraformRun(TaskSet):
 
         # upload the archive to TFE
         file_data = open(f"{archive_name}", 'rb').read()
-        encoded_file_data = base64.encodebytes(file_data)
-        response = requests.put(upload_url, data=encoded_file_data, headers={'Content-Type':'application/octet-stream'})
+        # encoded_file_data = base64.encodebytes(file_data)
+        response = requests.put(upload_url, data=file_data, headers={'Content-Type':'application/octet-stream'})
         
         print(response.status_code)
         print(response.text)
